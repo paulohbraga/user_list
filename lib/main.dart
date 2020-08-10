@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:user_list/provider/Users.dart';
+import 'package:user_list/routes/AppRoutes.dart';
+import 'package:user_list/views/User-Form.dart';
 import 'package:user_list/views/UserList.dart';
 
 void main() {
@@ -19,10 +21,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.teal,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: UserList(),
+        routes: {
+          AppRoutes.HOME: (_) => UserList(),
+          AppRoutes.USER_HOME: (_) => UserForm(),
+        },
       ),
     );
   }

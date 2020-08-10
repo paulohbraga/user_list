@@ -24,7 +24,7 @@ class Users with ChangeNotifier{
       return;
     }
 
-    if(user.id != null && user.id.trim().isEmpty &&  _items.containsKey(user.id)){
+    if(user.id != null && user.id.trim().isNotEmpty &&  _items.containsKey(user.id)){
       _items.update(user.id, (_) => User(
         id: user.id,
         name: user.name,
@@ -40,9 +40,20 @@ class Users with ChangeNotifier{
         email: user.email,
         avatarUrl: user.avatarUrl,
       ));
-      notifyListeners();
 
     }
+    notifyListeners();
+
 
   }
+  
+  void remove(User user){
+    //print(user.id);
+    if(user != null && user.id != null) {
+      _items.remove(user.id);
+    }
+    notifyListeners();
+
+  }
+
 }

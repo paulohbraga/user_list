@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:user_list/components/UserTile.dart';
 import 'package:user_list/models/User.dart';
 import 'package:user_list/provider/Users.dart';
+import 'package:user_list/routes/AppRoutes.dart';
 
 class UserList extends StatelessWidget {
   @override
@@ -15,7 +16,9 @@ class UserList extends StatelessWidget {
         title: Text('User list management'),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.add),
-          onPressed: null,
+          onPressed: () { 
+            Navigator.of(context).pushNamed(AppRoutes.USER_HOME);
+            },
           ),
         ],
       ),
