@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:user_list/components/UserTile.dart';
-import 'package:user_list/models/User.dart';
 import 'package:user_list/provider/Users.dart';
 import 'package:user_list/routes/AppRoutes.dart';
 

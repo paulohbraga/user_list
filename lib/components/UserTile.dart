@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_list/models/User.dart';
+import 'package:user_list/provider/Users.dart';
 import 'package:user_list/routes/AppRoutes.dart';
 
 class UserTile extends StatelessWidget {
@@ -28,10 +30,38 @@ class UserTile extends StatelessWidget {
                   ,arguments: user)
                 ),
             IconButton(
-                icon: Icon(
-                  Icons.delete,
-                  color: Colors.red,),
-                onPressed: null),
+              icon: Icon(
+                Icons.delete,
+                color: Colors.red,),
+              onPressed: (){
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: Text('Confirm delete'),
+                    content: Text('Are you sure?'),
+                    actions: <Widget>[
+                      FlatButton(
+                        onPressed: (){
+                          Navigator.of(context).pop(false);
+                        },
+                        child: Text('No'),
+                      ),
+                      FlatButton(
+                        onPressed: (){
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Text('Yes'),
+                      ),
+                    ],
+                  ), 
+                ).then((confirmed) => {
+                  if(confirmed){
+                    Provider.of<Users>(context, listen: false).remove(user),
+                    },
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

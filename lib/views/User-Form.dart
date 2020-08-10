@@ -9,11 +9,15 @@ class UserForm extends StatelessWidget {
   final Map<String, String> _formData = {};
 
   void _loadFormData(User user){
-    _formData['id'] = user.id;
+
+    if(user != null){
+
+    _formData['id'] = user.id ;
     _formData['name'] = user.name;
     _formData['email'] = user.email;
     _formData['avatarUrl'] = user.avatarUrl;
 
+    }
   }
 
   @override
