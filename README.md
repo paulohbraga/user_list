@@ -9,5 +9,8 @@ App to list users of o mock list
 - Orgazing files.
 - Components oriented
 
-![Demo](https://j.gifs.com/GvqJw0.gif)
+<center>
+    <img src=”https://j.gifs.com/GvqJw0.gif”>
+</center>
+
 
