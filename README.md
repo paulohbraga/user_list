@@ -6,8 +6,8 @@ App to list users of o mock list
 ## Framework: Flutter
 
 - Leveling use of ListViews, ListTile, read a dummy users file.
-- Orgazing files.
-- Components oriented
+- Organize files.
+- Component oriented
 
 
 <p align="center">
